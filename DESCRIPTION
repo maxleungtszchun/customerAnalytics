@@ -1,0 +1,22 @@
+Package: customerAnalytics
+Type: Package
+Title: Customer Analytics in R
+Version: 0.0.0.9000
+Author@R: person("Max", "Leung", email = "max.leung.ra414@gmail.com",
+                 role = c("aut", "cre"))
+Description: RFM analysis, call list generation
+License:
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.5.1)
+Imports:
+    rlang (>= 0.3.4),
+    dplyr (>= 0.8.1),
+    lubridate (>= 1.7.4),
+    stargazer (>= 5.2.2),
+    magrittr (>= 1.5),
+    ggplot2 (>= 3.1.1),
+    EnvStats (>= 2.3.1),
+    stringr (>= 1.4.0),
+    expss (>= 0.8.11)
+RoxygenNote: 6.1.1
