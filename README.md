@@ -22,7 +22,7 @@ devtools::install_github("maxleungtszchun/customerAnalytics")
 ## Three Examples
 ## 1. RFM Analysis
 In this analysis, the RFM scores of customers during period 0 and 1 are calculated by using period 0 and 1 transaction data.
-Click [here](https://drive.google.com/file/d/1G6AeKId11lOupRLLzFJYVO-6qRNrESMH/view?usp=sharing) to see the same results calculated by using Excel. You may ask why bother using R? 1. Excel can not handle data having more than 1,048,576 rows. For the dataset in the example, it is okay to use Excel. However, if you have other datasets that have more than 1 million rows, R is a better choice; 2. If the same process is going to be performed repeatedly, using R is a better choice.
+Click [here](https://drive.google.com/file/d/1G6AeKId11lOupRLLzFJYVO-6qRNrESMH/view?usp=sharing) to see the same results calculated by using Excel. You may ask why bother using R? 1. Excel can not handle data having more than 1,048,576 rows. For the dataset in this example, it is okay to use Excel. However, if you have other datasets that have more than 1 million rows, using R is a better choice; 2. If the same process is going to be performed repeatedly, using R is a better choice.
 
 Actionable Recommendation:  
 Marketing resoucres (e.g. promotion resources) can be allocated to the customers that have higher RFM scores in order to optimize response rates.
