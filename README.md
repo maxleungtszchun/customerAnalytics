@@ -20,6 +20,7 @@ devtools::install_github("maxleungtszchun/customerAnalytics")
 # the installation of this package requires R version >= 3.5.1
 ```
 ## Three Examples
+Note: The following examples additionally require installing the package of tidyverse.
 ## 1. RFM Analysis
 In this analysis, the RFM scores of customers during period 0 and 1 are calculated by using period 0 and 1 transaction data.
 Click [here](https://drive.google.com/file/d/1G6AeKId11lOupRLLzFJYVO-6qRNrESMH/view?usp=sharing) to see the same results calculated by using Excel. You may ask why bother using R? 1. Excel can not handle data having more than 1,048,576 rows. For the dataset in this example, it is okay to use Excel. However, if you have other datasets that have more than 1 million rows, using R is a better choice; 2. If the same process is going to be performed repeatedly, using R is a better choice.
