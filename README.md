@@ -1,3 +1,5 @@
+Note: If you are interested in SAS instead, please click [here](https://github.com/maxleungtszchun/customerAnalytics_SAS) to read Customer Analytics in SAS. If you are interested in R, please continue reading.
+
 # Customer Analytics in R
 This package's RFM function uses independent binning and assigns ties to the same bin. [IBM](https://www.ibm.com/support/knowledgecenter/en/SSLVMB_24.0.0/spss/rfm/idh_rfm_binning_transactions.html) provides a detail explanation of both methods.
 
