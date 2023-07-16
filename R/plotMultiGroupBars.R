@@ -50,7 +50,7 @@ plotPeriodGroupBars <- function (df, groupVar, measureVar, periodVar, sortFirst,
     ggplot2::stat_summary(ggplot2::aes(label = format(round2(..y.., dp),
                                                       big.mark = ",",
                                                       scientific = FALSE)),
-                          fun.y = fun, na.rm = TRUE, geom = "text",
+                          fun = fun, na.rm = TRUE, geom = "text",
                           position = ggplot2::position_dodge(width = 0.85), hjust = -0.05) +
     ggplot2::guides(fill = ggplot2::guide_legend(nrow = 1, reverse = TRUE))
 
