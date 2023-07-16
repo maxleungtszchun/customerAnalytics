@@ -36,7 +36,7 @@ plotPeriodGroupBars <- function (df, groupVar, measureVar, periodVar, sortFirst,
   ggplot2::ggplot(df, ggplot2::aes(x = !! groupVar,
                                    y = !! measureVar,
                                    fill = !! periodVar)) +
-    ggplot2::geom_bar(position = "dodge", stat = "summary", fun.y = fun, na.rm = TRUE, ...) +
+    ggplot2::geom_bar(position = "dodge", stat = "summary", fun = fun, na.rm = TRUE, ...) +
     ggplot2::scale_fill_manual(values = colorVector) +
     ggplot2::labs(x = "", y = label, title = title, fill = legendTitle) +
     ggplot2::scale_y_continuous(position = "right",
