@@ -21,7 +21,7 @@ plotGroupBars <- function (df, groupVar, measureVar, title, label,
   p <- ggplot2::ggplot(df, ggplot2::aes(x = reorder(!! groupVar, !! measureVar,
                                                     function(x) fun(x, na.rm = TRUE)),
                                         y = !! measureVar)) +
-    ggplot2::geom_bar(stat = "summary", fun.y = fun, na.rm = TRUE, ...) +
+    ggplot2::geom_bar(stat = "summary", fun = fun, na.rm = TRUE, ...) +
     ggplot2::stat_summary(ggplot2::aes(label = format(round2(..y.., dp),
                                                       big.mark = ",",
                                                       scientific = FALSE)),
