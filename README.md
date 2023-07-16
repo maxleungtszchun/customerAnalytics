@@ -65,13 +65,13 @@ whole <-
 
 ppp1 <- plotGroupBars(whole, Country, rfm_score,
                       title = "Average RFM scores by Country",
-                      label = "Average RFM scores", dp = 2, fill = "orange")
+                      label = "Average RFM scores", dp = 2, fill = "orange", width = 0.6)
 ppp2 <- plotHeatMap(whole, r_score, f_score, monetary, rfm_score)
 
 print(ppp1)
 print(ppp2)
 ```
-![Alt text](./svg/ppp1.svg)
+![Alt text](./svg/ppp1.png)
 ![Alt text](./svg/ppp2.svg)
 
 ## 2. Retention Analysis and RFM scores in the next period
@@ -121,31 +121,31 @@ final %<>%
 
 p1 <- plotGroupBars(final, Country, rfm_score,
                     title = "Average RFM scores by Country",
-                    label = "Average RFM scores", dp = 2, fill = "orange")
+                    label = "Average RFM scores", dp = 2, fill = "orange", width = 0.6)
 p2 <- plotGroupBars(final, Country, recency,
                     title = "Average Recency (Days) By Country",
-                    label = "Average Recency (Days)", fill = "pink")
+                    label = "Average Recency (Days)", fill = "pink", width = 0.6)
 p3 <- plotGroupBars(final, Country, frequency,
                     title = "Average Frequency (Times) By Country",
-                    label = "Average Frequency (Times)", fill = "light green")
+                    label = "Average Frequency (Times)", fill = "light green", width = 0.6)
 p4 <- plotGroupBars(final, Country, monetary,
                     title = "Average Monetary (Sterling) By Country",
-                    label = "Average Monetary (Sterling)", fill = "light blue")
+                    label = "Average Monetary (Sterling)", fill = "light blue", width = 0.6)
 p5 <- plotGroupBars(final, Country, return,
                     title = "Number of Return Customers",
                     label = "Return Customers",
-                    sum, dp = 0, fill = "grey", mean_line = FALSE)
+                    sum, dp = 0, fill = "grey", mean_line = FALSE, width = 0.6)
 p6 <- plotGroupBars(final, Country, return * 100,
                     title = "Come Back Rate (%)",
-                    label = "Come Back Rate (%)", fill = "gold")
+                    label = "Come Back Rate (%)", fill = "gold", width = 0.6)
 p7 <- plotHeatMap(final, r_score, f_score, monetary, rfm_score)
 
 print(p6)
 print(p1)
 print(p7)
 ```
-![Alt text](./svg/p6.svg)
-![Alt text](./svg/p1.svg)
+![Alt text](./svg/p6.png)
+![Alt text](./svg/p1.png)
 
 Independent binning, instead of nested binning, is applied. Thus, the number of customers in each RFM cell are different.
 ![Alt text](./svg/p7.svg)
@@ -178,7 +178,7 @@ t0_loyal <- getRfmTable(customer_data_t0_loyal, transaction_data_t0, CustomerID,
                         InvoiceDate, revenue) %>%
               getRfmScore(r_score, f_score, m_score,
                           logitWeights[[1]], "negative_r_zScore.x_weight",
-                          "f_zScore.x_weight", "m_zScore.x_weight") %<>%
+                          "f_zScore.x_weight", "m_zScore.x_weight") %>%
               left_join(customer_data_t0_loyal[c("CustomerID", "Country.x")], by = "CustomerID") %>%
               mutate(rfm_group = if_else(rfm_score <= 1, "<=1\nat t0",
                                          if_else(rfm_score <= 2, ">1 to <=2\nat t0",
@@ -191,7 +191,7 @@ t1_loyal <- getRfmTable(customer_data_t0_loyal, transaction_data_t1, CustomerID,
                         InvoiceDate, revenue) %>%
               getRfmScore(r_score, f_score, m_score,
                           logitWeights[[1]], "negative_r_zScore.x_weight",
-                          "f_zScore.x_weight", "m_zScore.x_weight") %<>%
+                          "f_zScore.x_weight", "m_zScore.x_weight") %>%
               left_join(customer_data_t0_loyal[c("CustomerID", "Country.x")], by = "CustomerID") %>%
               left_join(t0_loyal[c("CustomerID", "rfm_group")], by = "CustomerID") %>%
               mutate(period = "t1_loyal")
