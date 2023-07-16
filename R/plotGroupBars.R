@@ -25,7 +25,7 @@ plotGroupBars <- function (df, groupVar, measureVar, title, label,
     ggplot2::stat_summary(ggplot2::aes(label = format(round2(..y.., dp),
                                                       big.mark = ",",
                                                       scientific = FALSE)),
-                          fun.y = fun, na.rm = TRUE, geom = "text", hjust = -0.05) +
+                          fun = fun, na.rm = TRUE, geom = "text", hjust = -0.05) +
     ggplot2::labs(x = "", y = label, title = title) +
     ggplot2::scale_y_continuous(position = "right",
                                 labels = function (x) format(round2(x, dp), big.mark = ",", scientific = FALSE)) +
